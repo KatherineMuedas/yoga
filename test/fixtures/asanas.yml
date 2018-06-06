@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sanskrit_name: MyString
+  name: MyString
+  asana_order: 1
+  introduction: MyText
+  technique: MyText
+  variation: MyText
+  concentration: MyText
+  afterward: MyText
+  data: MyString
+
+two:
+  sanskrit_name: MyString
+  name: MyString
+  asana_order: 1
+  introduction: MyText
+  technique: MyText
+  variation: MyText
+  concentration: MyText
+  afterward: MyText
+  data: MyString
