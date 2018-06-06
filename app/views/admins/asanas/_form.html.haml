@@ -1,0 +1,33 @@
+= form_for @asana, url: @asana.new_record? ? admins_asanas_path : admins_asana_path(@asana) do |f|
+  = form_error_messages(f.object.errors)
+  %p
+    = f.label :sanskrit_name
+    = f.text_field :sanskrit_name
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :asana_order
+    = f.number_field :asana_order
+  %p
+    = f.label :introduction
+    = f.text_area :introduction
+  %p
+    = f.label :technique
+    = f.text_area :technique
+  %p
+    = f.label :variation
+    = f.text_area :variation
+  %p
+    = f.label :concentration
+    = f.text_area :concentration
+  %p
+    = f.label :afterward
+    = f.text_area :afterward
+  %p
+    = f.submit
+
+  %p
+    =link_to "Back", admins_asanas_path
+
+

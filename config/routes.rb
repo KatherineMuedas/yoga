@@ -4,8 +4,9 @@ Rails.application.routes.draw do
       sign_in: 'sign-in',
     }
   namespace :admins do
-    resources :asanas, except: [:index, :show, :destroy]
+    resources :asanas, except: [:show, :destroy]
   end
   resources :asanas, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: 'asanas#index'
 end
