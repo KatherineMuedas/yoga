@@ -1,0 +1,2 @@
+module Admins::AsanasHelper
+end

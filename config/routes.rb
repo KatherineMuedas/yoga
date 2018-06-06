@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admins,
+    path_names: {
+      sign_in: 'sign-in',
+    }
+  namespace :admins do
+    resources :asanas, except: [:index, :show, :destroy]
+  end
+  resources :asanas, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
