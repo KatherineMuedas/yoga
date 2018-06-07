@@ -10,7 +10,7 @@ class Admins::AsanasController <  Admins::BaseController
   end
 
   def create
-    @asana = Asana.friendly.new(asana_params)
+    @asana = Asana.new(asana_params)
     if @asana.save
       flash_created
       redirect_to edit_admins_asana_path(@asana)
@@ -38,7 +38,7 @@ class Admins::AsanasController <  Admins::BaseController
   private
 
   def asana_params
-    params.require(:asana).permit(:sanskrit_name, :name, :asana_order, :introduction, :technique, :variation, :concentration, :afterward)
+    params.require(:asana).permit(:sanskrit_name, :name, :asana_order, :introduction, :technique, :variation, :concentration, :afterward,  chakras_attributes: [:id, :name, :_destroy], benefits_attributes: [:id, :name, :_destroy], body_parts_attributes: [:id, :name, :_destroy], restrictions_attributes: [:id, :name, :_destroy])
   end
 
   def find_asana

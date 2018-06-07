@@ -1,9 +1,58 @@
 %h1 Asanas
 
-%h3=  link_to "By benefits", asanas_path
-%h3=  link_to "By chakras", asanas_path
-%h3=  link_to "By body parts", asanas_path
-%h3=  link_to "By restrictions", asanas_path
+%h3=  link_to "By benefits", asanas_by_search_default_path('benefits')
+%h3=  link_to "By chakras", asanas_by_search_default_path('chakras')
+%h3=  link_to "By body parts", asanas_by_search_default_path('body-parts')
+%h3=  link_to "By restrictions", asanas_by_search_default_path('restrictions')
+%br
+- if params[:search_type].present?
+  -if params[:search_type] == "chakras"
+    %h3=  link_to "Muladhara", asanas_by_search_path('chakras', 'muladhara')
+    %h3=  link_to "Svadhisthana", asanas_by_search_path('chakras', 'svadhisthana')
+    %h3=  link_to "Manipura", asanas_by_search_path('chakras', 'manipura')
+    %h3=  link_to "Anahata", asanas_by_search_path('chakras', 'anahata')
+    %h3=  link_to "Visuddha", asanas_by_search_path('chakras', 'visuddha')
+    %h3=  link_to "Ajna", asanas_by_search_path('chakras', 'ajna')
+    %h3=  link_to "Sahasrara", asanas_by_search_path('chakras', 'sahasrara')
+
+- if params[:search_type].present?
+  -if params[:search_type] == "benefits"
+    %h3=  link_to "Better flexibility" , asanas_by_search_path('benefits', "better-flexibility")
+    %h3=  link_to "Better posture" , asanas_by_search_path('benefits', "better-posture")
+    %h3=  link_to "Muscle strength" , asanas_by_search_path('benefits', "muscle-strength")
+    %h3=  link_to "Tones the body" , asanas_by_search_path('benefits', 'tones-the-body')
+    %h3=  link_to "Better sleep" , asanas_by_search_path('benefits', 'better-sleep')
+    %h3=  link_to "More energy", asanas_by_search_path('benefits', 'more-energy')
+    %h3=  link_to "Stronger bones", asanas_by_search_path('benefits', 'stronger-bones')
+
+
+- if params[:search_type].present?
+  -if params[:search_type] == "body-parts"
+    %h3=  link_to "Head", asanas_by_search_path('body-parts', 'head')
+    %h3=  link_to "Neck ", asanas_by_search_path('body-parts', 'neck')
+    %h3=  link_to "Shoulders", asanas_by_search_path('body-parts', 'shoulders')
+    %h3=  link_to "Arms", asanas_by_search_path('body-parts', 'arms')
+    %h3=  link_to "Chest" , asanas_by_search_path('body-parts', 'chest')
+    %h3=  link_to "Breast" , asanas_by_search_path('body-parts', 'breast')
+    %h3=  link_to "Waist" , asanas_by_search_path('body-parts', 'waist')
+    %h3=  link_to "Belly" , asanas_by_search_path('body-parts', 'belly')
+    %h3=  link_to "Abdomen" , asanas_by_search_path('body-parts', 'abdomen')
+    %h3=  link_to "Hip" , asanas_by_search_path('body-parts', 'hip')
+    %h3=  link_to "Pelvis" , asanas_by_search_path('body-parts', 'pelvis')
+    %h3=  link_to "Liver" , asanas_by_search_path('body-parts', 'liver')
+    %h3=  link_to "Uterus" , asanas_by_search_path('body-parts', 'uterus')
+    %h3=  link_to "Pancreas" , asanas_by_search_path('body-parts', 'pancreas')
+    %h3=  link_to "Thigh", asanas_by_search_path('body-parts', 'thigh')
+    %h3=  link_to "Knee  ", asanas_by_search_path('body-parts', 'knee')
+
+
+
+- if params[:search_type].present?
+  -if params[:search_type] == "restrictions"
+    %h3=  link_to "Children under age of 12" , asanas_by_search_path('restrictions', 'children-under-age-12')
+    %h3=  link_to "During menstruation", asanas_by_search_path('restrictions', 'during-menstruation')
+    %h3=  link_to "During pregnancy", asanas_by_search_path('restrictions', 'during-pregnancy')
+
 
 - @asanas.each do |asana|
   %h2= link_to asana.sanskrit_name, asana_path(asana)
