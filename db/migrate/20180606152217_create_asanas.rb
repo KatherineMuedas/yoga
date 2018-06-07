@@ -9,7 +9,6 @@ class CreateAsanas < ActiveRecord::Migration[5.2]
       t.text :variation
       t.text :concentration
       t.text :afterward
-      t.string :data
       t.string :slug, null: false
 
 
