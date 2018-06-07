@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :asana do
-    sanskrit_name { }
+    sanskrit_name ""
     name          {FFaker::Book.unique.title}
     asana_order   ""
     introduction  {FFaker::Book.description}

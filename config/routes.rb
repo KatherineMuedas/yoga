@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   namespace :admins do
     resources :asanas, except: [:show, :destroy]
   end
+  resources :home, only: [:index]
   resources :asanas, only: [:index, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'asanas#index'
+  root to: 'home#index'
 end
