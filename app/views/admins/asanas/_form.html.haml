@@ -1,31 +1,38 @@
-= form_for @asana, url: @asana.new_record? ? admins_asanas_path : admins_asana_path(@asana) do |f|
-  = form_error_messages(f.object.errors)
-  %p
-    = f.label :sanskrit_name
-    = f.text_field :sanskrit_name
-  %p
-    = f.label :name
-    = f.text_field :name
-  %p
-    = f.label :asana_order
-    = f.number_field :asana_order
-  %p
-    = f.label :introduction
-    = f.text_area :introduction
-  %p
-    = f.label :technique
-    = f.text_area :technique
-  %p
-    = f.label :variation
-    = f.text_area :variation
-  %p
-    = f.label :concentration
-    = f.text_area :concentration
-  %p
-    = f.label :afterward
-    = f.text_area :afterward
-  %p
-    = f.submit
+= simple_form_for @asana, url: @asana.new_record? ? admins_asanas_path : admins_asana_path(@asana) do |f|
+  = f.error_notification
+  = f.input :sanskrit_name, required: true
+  = f.input :name, required: true
+  = f.input :asana_order, required: true
+  = f.input :introduction
+  = f.input :technique
+  = f.input :variation
+  = f.input :concentration
+  = f.input :afterward
+  %h3 Chakras
+  #chakras
+    = f.simple_fields_for :chakras do |chakra|
+      = render 'chakra_fields', f: chakra
+    .links
+      = link_to_add_association 'Add chakra', f, :chakras
+  %h3 Benefits
+  #benefits
+    = f.simple_fields_for :benefits do |benefit|
+      = render 'benefit_fields', f: benefit
+    .links
+      = link_to_add_association 'Add benefit', f, :benefits
+  %h3 Body parts
+  #body_parts
+    = f.simple_fields_for :body_parts do |body_part|
+      = render 'body_part_fields', f: body_part
+    .links
+      = link_to_add_association 'Add body part', f, :body_parts
+  %h3 Restrictions
+  #restrictions
+    = f.simple_fields_for :restrictions do |restriction|
+      = render 'restriction_fields', f: restriction
+    .links
+      = link_to_add_association 'Add restriction', f, :restrictions
+  = f.button :submit
 
   %p
     =link_to "Back", admins_asanas_path

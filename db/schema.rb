@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_06_155458) do
+ActiveRecord::Schema.define(version: 2018_06_07_004055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2018_06_06_155458) do
     t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.jsonb "json_attributes"
+    t.index ["json_attributes"], name: "index_asanas_on_json_attributes", using: :gin
     t.index ["slug"], name: "index_asanas_on_slug", unique: true
   end
 
