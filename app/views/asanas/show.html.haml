@@ -1,21 +1,22 @@
-%h1
-  = @asana.sanskrit_name
-  %br
-  %small= @asana.name
+.container
+  %h1
+    = @asana.sanskrit_name
+    %br
+    %small= @asana.name
 
-%h4 Introduction:
-%p= simple_format(@asana.introduction)
+  %h4 Introduction:
+  %p= simple_format(@asana.introduction)
 
-%h4 Technique:
-%p= simple_format(@asana.technique)
+  %h4 Technique:
+  %p= simple_format(@asana.technique)
 
-%h4 Variation:
-%p= simple_format(@asana.variation)
+  %h4 Variation:
+  %p= simple_format(@asana.variation)
 
-%h4 Concentration:
-%p= simple_format(@asana.concentration)
+  %h4 Concentration:
+  %p= simple_format(@asana.concentration)
 
-%h4 Afterward:
-%p= simple_format(@asana.afterward)
+  %h4 Afterward:
+  %p= simple_format(@asana.afterward)
 
-%p= link_to "Back", asanas_path
+  %p= link_to "Back", asanas_path

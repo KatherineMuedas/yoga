@@ -1,0 +1,33 @@
+.bg-image-container{
+  &.banner{
+    background-color: #DFDFDF;
+    background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), image-url("asanas-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: left;
+    position: relative;
+    display: table;
+    width: 100%;
+    background-position: center center;
+    height: 450px;
+  }
+
+  .container{
+    vertical-align: middle;
+    position: relative;
+    color: white;
+    h1 , h5{
+      color: $white !important;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      // @media (max-width: 576px) {
+      //   text-align: center;
+      //  }
+    }
+    h1{
+      margin-top: 150px;
+    }
+    h5 {
+    }
+  }
+
+}
