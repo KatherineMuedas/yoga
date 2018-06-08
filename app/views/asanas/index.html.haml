@@ -6,12 +6,19 @@
 
     %h5 Essential ways for us to subtly attune, or create a resonance with, a complex range of macrocosmic energies.
 
+%ul.nav.justify-content-center
+  %li.nav-item
+    =  link_to "All asanas", asanas_path, class:"nav-link"
+  %li.nav-item
+    =  link_to "By benefits", asanas_by_search_default_path('benefits'), class:"nav-link"
+  %li.nav-item
+    =  link_to "By chakras", asanas_by_search_default_path('chakras'), class:"nav-link"
+  %li.nav-item
+    =  link_to "By body parts", asanas_by_search_default_path('body-parts'), class:"nav-link"
+  / %li.nav-item
+  /   =  link_to "By restrictions", asanas_by_search_default_path('restrictions'), class:"nav-link"
 
 .container
-  %h3=  link_to "By benefits", asanas_by_search_default_path('benefits')
-  %h3=  link_to "By chakras", asanas_by_search_default_path('chakras')
-  %h3=  link_to "By body parts", asanas_by_search_default_path('body-parts')
-  %h3=  link_to "By restrictions", asanas_by_search_default_path('restrictions')
   %br
   - if params[:search_type].present?
     -if params[:search_type] == "chakras"

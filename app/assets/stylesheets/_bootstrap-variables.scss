@@ -235,7 +235,7 @@ $container-max-widths: (
 // // stylelint-disable value-keyword-case
 // $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 // $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            Verdana, Geneva, sans-serif !default;
+$font-family-base:           "Bryant MOO Pro Medium", "Trebuchet MS", Trebuchet, "Liberation Sans", sans-serif !default;
 // // stylelint-enable value-keyword-case
 
 // $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
@@ -599,8 +599,8 @@ $font-family-base:            Verdana, Geneva, sans-serif !default;
 
 // // Navs
 
-// $nav-link-padding-y:                .5rem !default;
-// $nav-link-padding-x:                1rem !default;
+$nav-link-padding-y:                1.3rem !default;
+$nav-link-padding-x:                0.625rem !default;
 // $nav-link-disabled-color:           $gray-600 !default;
 
 // $nav-tabs-border-color:             $gray-300 !default;
