@@ -100,7 +100,7 @@
 .container.mt-5
   .row.card-deck
     - @asanas.each do |asana|
-      .col-12.col-md-6.col-lg-4
+      .col-12.col-md-6.col-lg-4.mt-4
         .card.asanas
           .card-body
             .media
@@ -116,7 +116,3 @@
                     - if asana.body_parts.present?
                       %li.text-muted= asana.body_parts.map(&:name).first(3).join(", ")
                   = link_to "View more", asana_path(asana)
-
-
-
-
