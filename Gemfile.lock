@@ -106,6 +106,8 @@ GEM
       railties (>= 3.0.0)
     ffaker (2.8.1)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     globalid (0.4.1)
@@ -263,6 +265,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   ffaker
+  font-awesome-rails
   friendly_id (~> 5.1.0)
   hamlit-rails
   jbuilder (~> 2.5)

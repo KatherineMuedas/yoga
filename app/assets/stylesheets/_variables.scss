@@ -1,8 +1,10 @@
 h1, h2, h3, h4, h5, h6 {
   color: $dark !important;
-  // font-weight: $font-weight-bold;
+  font-weight: bold !important;
   // text-transform: uppercase;
 
-  // &.text-thin { font-weight: 300; }
+  &.text-thin { font-weight: 300 !important; }
 }
-
+ul{
+  padding-left: 20px;
+}

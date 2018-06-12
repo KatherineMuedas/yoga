@@ -5,22 +5,22 @@ class AsanasController < ApplicationController
       when 'chakras'
         params[:search] = "Muladhara" unless params[:search].present?
         search = params[:search].gsub('-', ' ').capitalize
-        @asanas = Asana.jsonb_contains("chakras.name" => search)
+        @asanas = Asana.jsonb_contains("chakras.name" => search).order(asana_order: :asc)
       when 'benefits'
         params[:search] = "Better flexibility"  unless params[:search].present?
         search = params[:search].gsub('-', ' ').capitalize
-        @asanas = Asana.jsonb_contains("benefits.name" => search)
+        @asanas = Asana.jsonb_contains("benefits.name" => search).order(asana_order: :asc)
       when 'body-parts'
         params[:search] = "Head" unless params[:search].present?
         search = params[:search].gsub('-', ' ').capitalize
-        @asanas = Asana.jsonb_contains("body_parts.name" => search)
+        @asanas = Asana.jsonb_contains("body_parts.name" => search).order(asana_order: :asc)
       when 'restrictions'
         params[:search] = "Children under age of 12"  unless params[:search].present?
         search = params[:search].gsub('-', ' ').capitalize
-        @asanas = Asana.jsonb_contains("restrictions.name" => search)
+        @asanas = Asana.jsonb_contains("restrictions.name" => search).order(asana_order: :asc)
       end
     else
-      @asanas = Asana.all
+      @asanas = Asana.all.order(asana_order: :asc)
     end
   end
 

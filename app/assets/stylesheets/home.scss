@@ -33,12 +33,55 @@
 }
 
 
-.nav{
+.nav.primary-nav{
   background-color: $gray-100;
+  border-bottom: solid 1px $gray-300;
+
   a{
     color: $gray-800;
+    border-bottom: solid transparent 2px;
   }
   a:hover {
     border-bottom: solid $primary 2px;
     }
+}
+
+.card.asanas{
+  border: none !important;
+}
+
+
+.card.asanas{
+  &:hover{
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+  }
+}
+
+.nav.secondary-nav{
+  background-color: $white;
+  border-bottom: solid 1px $gray-300;
+  .nav-link{
+    margin: 0.7rem 0.625rem;
+    font-size: 1rem;
+  }
+
+  // .nav-item{
+  //   %h4{
+  //     padding: 1.3rem 0.625rem !important;
+  //     margin-bottom: 0px;
+  //   }
+  // }
+}
+
+
+.badge-light{
+  color: $primary;
+  background-color: $gray-100 ;
+  padding: 0.6em 0.4em !important;
+
+}
+
+.badge-light:hover{
+  color: $white !important;
+  background-color:$primary !important ;
 }
