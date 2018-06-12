@@ -40,13 +40,10 @@
             - @asana.restrictions.each do |restriction|
               %li.card-text= restriction.name
 
-    .col-sm-12.col-md-12.col-lg-8.order-last
-      %h4.mt-4.mb-3 Effects and Benefits
-      %ul
-        - if @asana.chakras.present?
-          - @asana.chakras.each do |chakra|
-            %li= chakra.name
-        - if @asana.benefits.present?
-          - @asana.benefits.each do |benefit|
-            %li= benefit.name
+    - if @asana.effects.present?
+      .col-sm-12.col-md-12.col-lg-8.order-last
+        %h4.mt-4.mb-3 Effects and Benefits
+        %ul
+          - @asana.effects.each do |effect|
+            %li= effect.name
 

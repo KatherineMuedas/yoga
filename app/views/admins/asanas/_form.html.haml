@@ -8,6 +8,7 @@
   = f.input :variation
   = f.input :concentration
   = f.input :afterward
+
   %h3 Chakras
   #chakras
     = f.simple_fields_for :chakras do |chakra|
@@ -32,6 +33,13 @@
       = render 'restriction_fields', f: restriction
     .links
       = link_to_add_association 'Add restriction', f, :restrictions
+  = f.button :submit
+  %h3 Effects
+  #effects
+    = f.simple_fields_for :effects do |effect|
+      = render 'effect_fields', f: effect
+    .links
+      = link_to_add_association 'Add effect', f, :effects
   = f.button :submit
 
   %p

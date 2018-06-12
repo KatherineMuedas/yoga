@@ -1,2 +1,7 @@
-%h1 Edit #{@asana.sanskrit_name}
-= render 'form'
+.container.mt-5
+  %h5
+    = link_to admins_asanas_path do
+      %i.fas.fa-arrow-circle-left
+      Asanas
+  %h1 Edit #{@asana.sanskrit_name}
+  = render 'form'
