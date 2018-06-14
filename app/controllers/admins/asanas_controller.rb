@@ -32,7 +32,7 @@ class Admins::AsanasController <  Admins::BaseController
   end
 
   def index
-    @asanas = Asana.all
+    @asanas = Asana.all.order(asana_order: :asc)
   end
 
   private
