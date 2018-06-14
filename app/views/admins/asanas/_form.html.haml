@@ -1,48 +1,96 @@
 = simple_form_for @asana, url: @asana.new_record? ? admins_asanas_path : admins_asana_path(@asana) do |f|
   = f.error_notification
-  = f.input :sanskrit_name, required: true
-  = f.input :name, required: true
-  = f.input :asana_order, required: true
-  = f.input :introduction
-  = f.input :technique
-  = f.input :variation
-  = f.input :concentration
-  = f.input :afterward
 
-  %h3 Chakras
-  #chakras
-    = f.simple_fields_for :chakras do |chakra|
-      = render 'chakra_fields', f: chakra
-    .links
-      = link_to_add_association 'Add chakra', f, :chakras
-  %h3 Benefits
-  #benefits
-    = f.simple_fields_for :benefits do |benefit|
-      = render 'benefit_fields', f: benefit
-    .links
-      = link_to_add_association 'Add benefit', f, :benefits
-  %h3 Body parts
-  #body_parts
-    = f.simple_fields_for :body_parts do |body_part|
-      = render 'body_part_fields', f: body_part
-    .links
-      = link_to_add_association 'Add body part', f, :body_parts
-  %h3 Restrictions
-  #restrictions
-    = f.simple_fields_for :restrictions do |restriction|
-      = render 'restriction_fields', f: restriction
-    .links
-      = link_to_add_association 'Add restriction', f, :restrictions
-  = f.button :submit
-  %h3 Effects
-  #effects
-    = f.simple_fields_for :effects do |effect|
-      = render 'effect_fields', f: effect
-    .links
-      = link_to_add_association 'Add effect', f, :effects
-  = f.button :submit
+  .form-group
+    = f.label :sanskrit_name
+    = f.input_field :sanskrit_name, required: true, class: "form-control"
+  .form-row
+    .col-9
+      = f.label :name
+      = f.input_field :name, required: true, class: "form-control"
+    .col
+      = f.label :asana_order, "Order"
+      = f.input_field :asana_order, required: true, class: "form-control"
+  .form-group
+    = f.label :introduction
+    = f.input_field :introduction, class: "form-control", rows:5
+  .form-group
+    = f.label :technique
+    = f.input_field :technique, class: "form-control", rows:5
+  .form-group
+    = f.label :variation
+    = f.input_field :variation, class: "form-control", rows:5
+  .form-group
+    = f.label :concentration
+    = f.input_field :concentration, class: "form-control", rows:5
+  .form-group
+    = f.label :afterward
+    = f.input_field :afterward, class: "form-control", rows:5
 
-  %p
-    =link_to "Back", admins_asanas_path
+
+  .row
+    .col.col-sm-12.col-md-6
+      .card.border-secondary.mb-3
+        %h5.card-header Chakras
+        .card-body.text-dark
+          #chakras
+            %ul.list-group.list-group-flush
+              = f.simple_fields_for :chakras do |chakra|
+                %li.list-group-item
+                  = render 'chakra_fields', f: chakra
+              .links.mt-5
+                = link_to_add_association 'Add chakra', f, :chakras, class: "btn btn-secondary"
+
+    .col.col-sm-12.col-md-6
+      .card.border-secondary.mb-3
+        %h5.card-header Benefits
+        .card-body.text-dark
+          #benefits
+            %ul.list-group.list-group-flush
+              = f.simple_fields_for :benefits do |benefit|
+                %li.list-group-item
+                  = render 'benefit_fields', f: benefit
+
+              .links.mt-5
+                = link_to_add_association 'Add benefit', f, :benefits, class: "btn btn-secondary"
+
+    .col.col-sm-12.col-md-6
+      .card.border-secondary.mb-3
+        %h5.card-header Body parts
+        .card-body.text-dark
+          #body_parts
+            %ul.list-group.list-group-flush
+              = f.simple_fields_for :body_parts do |body_part|
+                %li.list-group-item
+                  = render 'body_part_fields', f: body_part
+            .links.mt-5
+              = link_to_add_association 'Add body part', f, :body_parts, class: "btn btn-secondary"
+
+    .col.col-sm-12.col-md-6
+      .card.border-secondary.mb-3
+        %h5.card-header Restrictions
+        .card-body.text-dark
+          #restrictions
+            %ul.list-group.list-group-flush
+              = f.simple_fields_for :restrictions do |restriction|
+                %li.list-group-item
+                  = render 'restriction_fields', f: restriction
+              .links.mt-5
+                = link_to_add_association 'Add restriction', f, :restrictions, class: "btn btn-secondary"
+
+
+    .col.col-sm-12.col-md-6
+      .card.border-secondary.mb-3
+        %h5.card-header Effects
+        .card-body.text-dark
+          #effects
+            %ul.list-group.list-group-flush
+              = f.simple_fields_for :effects do |effect|
+                %li.list-group-item
+                  = render 'effect_fields', f: effect
+              .links.mt-5
+                = link_to_add_association 'Add effect', f, :effects, class: "btn btn-secondary"
+
+  = f.button :submit, class: "btn btn-primary btn-lg btn-block"
 
 

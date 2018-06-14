@@ -1,3 +1,8 @@
 .nested-fields
-  = f.input :name
-  = link_to_remove_association "Remove effect", f
+  .form-group
+    = f.label :name
+    = f.input_field :name, class: "form-control"
+  %br
+  %br
+  = link_to_remove_association "Remove effect", f, class: "btn btn-outline-danger btn-sm"
+

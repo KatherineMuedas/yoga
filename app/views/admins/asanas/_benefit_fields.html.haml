@@ -1,3 +1,6 @@
-.nested-fields
-  = f.input :name, collection: Asana::Benefits
-  = link_to_remove_association "Remove benefit", f
+.nested-fields.mt-3
+  = f.label "Select a benefit"
+  = f.input_field :name, collection: Asana::Benefits
+  %br
+  %br
+  = link_to_remove_association "Remove benefit", f, class: "btn btn-outline-danger btn-sm"
