@@ -1,3 +1,6 @@
 .nested-fields
-  = f.input :name, collection: Asana::BodyParts
-  = link_to_remove_association "Remove body part", f
+  = f.label "Body Parts"
+  = f.input_field :name, collection: Asana::BodyParts
+  %br
+  %br
+  = link_to_remove_association "Remove body part", f, class: "btn btn-outline-danger btn-sm"

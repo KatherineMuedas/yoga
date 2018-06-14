@@ -1,21 +1,49 @@
-%h1
-  = @asana.sanskrit_name
-  %br
-  %small= @asana.name
+.container.mt-5
+  %h5
+    = link_to asanas_path do
+      %i.fas.fa-arrow-circle-left
+      Asanas
 
-%h4 Introduction:
-%p= simple_format(@asana.introduction)
+  %h1.mt-4
+    = @asana.sanskrit_name
+  %h5.text-thin= @asana.name
 
-%h4 Technique:
-%p= simple_format(@asana.technique)
+  .row
+    .col-sm-12.col-md-12.col-lg-8
+      - if @asana.introduction.present?
+        = simple_format(@asana.introduction, class: "mt-4")
 
-%h4 Variation:
-%p= simple_format(@asana.variation)
+      %h4.mt-4.mb-3 Technique
+      %ul
+        = simple_format(@asana.technique,{class: "techniques"}, wrapper_tag: "li")
 
-%h4 Concentration:
-%p= simple_format(@asana.concentration)
+      - if @asana.variation.present?
+        %h6.mt-4
+          %strong Variation
+        = simple_format(@asana.variation,{class: "techniques"}, wrapper_tag: "li")
 
-%h4 Afterward:
-%p= simple_format(@asana.afterward)
+    .col-sm-12.col-md-12.col-lg-4
+      .card.bg-light.mb-3
+        .card-body
+          %h4.card-title Concentration
+          %p.card-text= simple_format(@asana.concentration)
 
-%p= link_to "Back", asanas_path
+      .card.bg-light.mb-3
+        .card-body
+          %h4.card-title Afterward
+          %p.card-text= simple_format(@asana.afterward)
+
+      - if @asana.restrictions.present?
+        .card.border-danger.mb-3
+          .card-body.text-danger
+            %h4.card-title.text-danger Caution
+            - @asana.restrictions.each do |restriction|
+              %li.card-text= restriction.name
+
+    - if @asana.effects.present?
+      .col-sm-12.col-md-12.col-lg-8.order-last
+        %h4.mt-4.mb-3 Effects and Benefits
+        %ul
+          - @asana.effects.each do |effect|
+            %li= effect.name
+

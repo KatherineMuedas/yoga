@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 2018_06_07_004055) do
     t.text "variation"
     t.text "concentration"
     t.text "afterward"
-    t.string "data"
     t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

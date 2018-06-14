@@ -1,19 +1,37 @@
-%h1 Asanas
+.container.mt-5
+  %h1 Asanas
 
-= link_to "New asana", new_admins_asana_path
-%br
-%br
+  = link_to "New asana", new_admins_asana_path, class: "btn btn-primary "
+  %br
+  %br
 
-%table
-  %tr
-    %th{style: "border: 1px solid black;"} Sanskrit Name
-    %th{style: "border: 1px solid black;"} Order
-    %th
-  - @asanas.each do |asana|
-    %tr
-      %td{style: "border: 1px solid black;"}= asana.sanskrit_name
-      %td{style: "border: 1px solid black;"}= asana.asana_order
-      %td{style: "border: 1px solid black;"}= link_to "Edit", edit_admins_asana_path(asana)
+  %table.table.table-striped
+    %thead
+      %tr
+        %th{:scope => "col"} Sanskrit Name
+        %th{:scope => "col"} Order
+        %th{:scope => "col"}
+        %th{:scope => "col"}
+    %tbody
+      - @asanas.each do |asana|
+        %tr
+          %td= link_to asana.sanskrit_name, edit_admins_asana_path(asana)
+          %td= asana.asana_order
+          %td= link_to "Edit", edit_admins_asana_path(asana)
+          %td= link_to "View", asana_path(asana), target:"_blank"
+
+
+
+  / %table
+  /   %tr
+  /     %th{style: "border: 1px solid black;"} Sanskrit Name
+  /     %th{style: "border: 1px solid black;"} Order
+  /     %th
+  /   - @asanas.each do |asana|
+  /     %tr
+  /       %td{style: "border: 1px solid black;"}= asana.sanskrit_name
+  /       %td{style: "border: 1px solid black;"}= asana.asana_order
+  /       %td{style: "border: 1px solid black;"}= link_to "Edit", edit_admins_asana_path(asana)
 
 
 

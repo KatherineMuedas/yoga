@@ -32,13 +32,13 @@ class Admins::AsanasController <  Admins::BaseController
   end
 
   def index
-    @asanas = Asana.all
+    @asanas = Asana.all.order(asana_order: :asc)
   end
 
   private
 
   def asana_params
-    params.require(:asana).permit(:sanskrit_name, :name, :asana_order, :introduction, :technique, :variation, :concentration, :afterward,  chakras_attributes: [:id, :name, :_destroy], benefits_attributes: [:id, :name, :_destroy], body_parts_attributes: [:id, :name, :_destroy], restrictions_attributes: [:id, :name, :_destroy])
+    params.require(:asana).permit(:sanskrit_name, :name, :asana_order, :introduction, :technique, :variation, :concentration, :afterward,  chakras_attributes: [:id, :name, :_destroy], benefits_attributes: [:id, :name, :_destroy], body_parts_attributes: [:id, :name, :_destroy], restrictions_attributes: [:id, :name, :_destroy], effects_attributes: [:id, :name, :_destroy])
   end
 
   def find_asana

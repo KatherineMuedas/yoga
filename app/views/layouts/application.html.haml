@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0, minimum-scale=1.0"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.0.13/css/solid.css", :integrity => "sha384-Rw5qeepMFvJVEZdSo1nDQD5B6wX0m7c5Z/pLNvjkB14W6Yki1hKbSEQaX9ffUbWe", :rel => "stylesheet"}/
+    %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css", :integrity => "sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV", :rel => "stylesheet"}/
+
+    %title Yoga
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = yield
+
